@@ -27,9 +27,9 @@ public class MainActivity extends ReactActivity {
     realm = Realm.getDefaultInstance();
 
     Log.d(TAG,"onCreate:process started");
-    realm.beginTransaction();
-    realm.deleteAll();
-    realm.commitTransaction();
+//    realm.beginTransaction();
+//    realm.deleteAll();
+//    realm.commitTransaction();
 
     this.saveData("name1",1,1,1);
     this.saveData("name2",2,2,2);
@@ -53,10 +53,10 @@ public class MainActivity extends ReactActivity {
   }
 
   private void readData(){
-    RealmResults<Athelete> atheletes = realm.where(Athelete.class).findAll();
-    for(Athelete ath:atheletes){
+    RealmResults<GetAthleteModel> atheletes = realm.where(GetAthleteModel.class).findAll();
+    for(GetAthleteModel ath:atheletes){
       try{
-        Log.d(TAG,ath.getName());
+        Log.d(TAG,ath.getFirstName());
       }
       catch(Exception e){
         e.printStackTrace();
@@ -67,11 +67,12 @@ public class MainActivity extends ReactActivity {
     realm.executeTransactionAsync(new Realm.Transaction() {
       @Override
       public void execute(Realm bgRealm) {
-        Athelete athelete = bgRealm.createObject(Athelete.class);
-        athelete.setName(str1);
+        GetAthleteModel athelete = new GetAthleteModel();
+        athelete.setFirstName(str1);
         athelete.setId(a);
-        athelete.setClientId(b);
-        athelete.setWarehouseId(c);
+        athelete.setWarehouseId(b);
+        athelete.setLastName(""+c);
+        bgRealm.insertOrUpdate(athelete);
       }
     }, new Realm.Transaction.OnSuccess() {
       @Override
@@ -82,6 +83,7 @@ public class MainActivity extends ReactActivity {
     }, new Realm.Transaction.OnError() {
       @Override
       public void onError(Throwable error) {
+        error.printStackTrace();
         // Transaction failed and was automatically canceled.
         Log.d(TAG,"onError:error occured");
       }
