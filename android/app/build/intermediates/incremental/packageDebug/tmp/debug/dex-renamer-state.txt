@@ -1,4 +1,4 @@
-#Mon Jul 27 12:29:01 IST 2020
+#Mon Jul 27 18:15:45 IST 2020
 base.0=/Users/kumargaurav/Documents/poc/poc-strongarm-sync-update/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
