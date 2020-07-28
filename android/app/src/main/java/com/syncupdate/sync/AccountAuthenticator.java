@@ -1,4 +1,4 @@
-package com.syncupdate;
+package com.syncupdate.sync;
 
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;

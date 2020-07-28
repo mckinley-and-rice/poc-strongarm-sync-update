@@ -1,4 +1,4 @@
-package com.syncupdate;
+package com.syncupdate.sync;
 
 import android.accounts.Account;
 import android.content.AbstractThreadedSyncAdapter;
@@ -19,14 +19,14 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
     private static final String TAG = "SYNC_ADAPTER";
     private final ContentResolver resolver;
 
-    public SyncAdapter(Context context, boolean autoInitialize) {
-        super(context, autoInitialize);
-    }
-
     public SyncAdapter(Context context, boolean autoInitialize, boolean allowParallelSyncs) {
         super(context, autoInitialize, allowParallelSyncs);
         this.resolver = context.getContentResolver();
     }
+
+//    public SyncAdapter(Context context, boolean autoInitialize) {
+//        super(context, autoInitialize);
+//    }
 
     @Override
     public void onPerformSync(Account account, Bundle bundle, String s, ContentProviderClient contentProviderClient, SyncResult syncResult) {

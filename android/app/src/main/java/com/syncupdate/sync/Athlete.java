@@ -1,4 +1,4 @@
-package com.syncupdate;
+package com.syncupdate.sync;
 
 public class Athlete {
     int id;
