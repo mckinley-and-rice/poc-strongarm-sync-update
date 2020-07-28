@@ -23,13 +23,20 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import ListView from './src/components/listView';
+import Button from './src/components/button';
 
 const globalAny: any = global;
 
 const App: () => React.ReactElement = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <View style={{ backgroundColor: '#aaa', height: '100%' }}>
+        <Button buttonText="Download Athletes" style={{ marginBottom: 30 }} />
+        <Text style={{ marginBottom: 30, marginLeft: 30, fontSize: 25, color: '#222' }}>Athletes List</Text>
+        <ListView />
+      </View>
+      {/* <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -69,7 +76,7 @@ const App: () => React.ReactElement = () => {
             <LearnMoreLinks />
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </SafeAreaView> */}
     </>
   );
 };
