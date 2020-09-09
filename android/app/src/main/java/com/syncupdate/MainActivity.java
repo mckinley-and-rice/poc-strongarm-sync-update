@@ -26,28 +26,28 @@ public class MainActivity extends ReactActivity {
     super.onCreate(savedInstanceState);
     realm = Realm.getDefaultInstance();
 
-    Log.d(TAG,"onCreate:process started");
+//    Log.d(TAG,"onCreate:process started");
 //    realm.beginTransaction();
 //    realm.deleteAll();
 //    realm.commitTransaction();
 
-    this.saveData("name1",1,1,1);
-    this.saveData("name2",2,2,2);
-    this.saveData("name3",3,3,3);
-    this.saveData("name4",4,4,4);
-    this.saveData("name5",5,5,5);
-
-//    this.readData();
-
-    new android.os.Handler().postDelayed(
-        new Runnable() {
-          public void run() {
-            Log.i("tag", "This'll run 300 milliseconds later");
-            readData();
-          }
-        },
-        10000);
-
+//    this.saveData("name1",1,1,1);
+//    this.saveData("name2",2,2,2);
+//    this.saveData("name3",3,3,3);
+//    this.saveData("name4",4,4,4);
+//    this.saveData("name5",5,5,5);
+//
+////    this.readData();
+//
+//    new android.os.Handler().postDelayed(
+//        new Runnable() {
+//          public void run() {
+//            Log.i("tag", "This'll run 300 milliseconds later");
+//            readData();
+//          }
+//        },
+//        10000);
+//
 
 
   }

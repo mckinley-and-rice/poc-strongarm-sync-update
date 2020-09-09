@@ -96,5 +96,4 @@ public class GetAthleteModel extends RealmObject {
     public void setId(Integer id) {
         this.id = id;
     }
-
 }
